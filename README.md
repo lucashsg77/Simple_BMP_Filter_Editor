@@ -1,4 +1,4 @@
-#Quick breakdown#
+# Quick breakdown
 
 So in case you want to use this in QT I will leave the .pro file here, but in case you want to use the BMP parser and it's filters anywhere else to do so is very simple.
 1. You will need to use the image(.h and .cpp files) and the bitmap classes(.h and .cpp files) to get the BMP parser to work.
@@ -18,7 +18,7 @@ grayscale.grayscale_filter();
 vector<uint8_t> BMP_filtered_pixels = grayscale.filtered_pixel_data();
 ```
 
-#Usage#
+# Usage
 
 The Bitmap class is the foundation of this program it has basically only two functions which are the I/O ones and the constructor which uses the read function, use them as indicated bellow:
 | Function | Parameters | Usage |
@@ -82,6 +82,6 @@ Most filters will be applied if you use ```filter_object.filter_class_filter(cla
 
 If there are any doubts on how to use it I think that a quick look at the mainwindow.cpp will enlighten you on how to use the filters.
 
-#Other considerations#
+## Other considerations
 
 There are ways to make this code better and faster, one thing that most image libraires have that I did not implement is a FFT that can make the convolution part of the process speed up drastically as well as the coding itself but this project was an experiment to me, so feel free to improve the code of you want to!
