@@ -1,5 +1,6 @@
 # Quick breakdown
 
+I submited some BMP's already but if you want to try your own, Windows's paint can save/convert images from any format to a 24-bit BMP you just need to open it there and click save, then choose to save as a 24-bit BMP.
 So in case you want to use this in QT I will leave the .pro file here, but in case you want to use the BMP parser and it's filters anywhere else to do so is very simple.
 1. You will need to use the image(.h and .cpp files) and the bitmap classes(.h and .cpp files) to get the BMP parser to work.
 2. Next thing is to get the filter class and figure out what filters you want to use.
@@ -86,4 +87,4 @@ If there are any doubts on how to use it I think that a quick look at the mainwi
 ## Other considerations
 With the HSV besides the brightness and saturation you can change the HUE too, all you need to do is a function to do so given that the function to transform BGR to HSV is already done and if you only need the histogram as well you can also take it separately and use some other library to plot a graph, if needed in QT you could use the script engine built in and use matplotlib in python to do so.
 
-There are ways to make this code better and faster, one thing that most image libraries have that I did not implement is a FFT that can make the convolution part of the process speed up drastically, as well as, the coding itself could be better but this project was an experiment to me, so feel free to improve the code if you want to!
+There are ways to make this code better and faster, one thing that most image libraries have that I did not implement is a FFT that can make the convolution part of the process speed up drastically, as well as, the coding itself could be better but this project was an experiment to me and I'll be updating it from time to time with some refactors, soon I will have it working on 32 bits BMP as well as other RAW image formats, so feel free to improve the code if you want to!
