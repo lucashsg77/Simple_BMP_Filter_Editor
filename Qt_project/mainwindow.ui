@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1070</width>
+    <height>765</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>BMP filter editor</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(150,150, 150);
+</string>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="3" column="0">
+     <widget class="QPushButton" name="Load">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(200, 200, 200);</string>
+      </property>
+      <property name="text">
+       <string>Load Image</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="4" colspan="2">
+     <widget class="QPushButton" name="Gaussian_Blur">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(200, 200, 200);</string>
+      </property>
+      <property name="text">
+       <string>Gaussian_Blur</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="0">
+     <widget class="QLabel" name="Last_filter">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 0)</string>
+      </property>
+      <property name="text">
+       <string> Last filter: No filter used</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="1" colspan="2">
+     <widget class="QPushButton" name="Horizontal_Mirror">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(200, 200, 200);</string>
+      </property>
+      <property name="text">
+       <string>Horizontal_Mirror</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="1" colspan="2">
+     <widget class="QPushButton" name="Threshold">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(200, 200, 200);</string>
+      </property>
+      <property name="text">
+       <string>Threshold</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="0">
+     <widget class="QPushButton" name="HSV_Saturation">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(200, 200, 200);</string>
+      </property>
+      <property name="text">
+       <string>HSV_Saturation</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="5">
+     <widget class="QPushButton" name="Close">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(200, 200, 200);</string>
+      </property>
+      <property name="text">
+       <string>Close</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="3">
+     <widget class="QPushButton" name="Grayscale">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(200, 200, 200);</string>
+      </property>
+      <property name="text">
+       <string>Grayscale</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="5">
+     <widget class="QPushButton" name="Filtered_Image">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(200, 200, 200);</string>
+      </property>
+      <property name="text">
+       <string>Original size output image</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="4" colspan="2">
+     <widget class="QPushButton" name="Histogram">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(200, 200, 200);</string>
+      </property>
+      <property name="text">
+       <string>Eq_Histogram</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1" colspan="2">
+     <widget class="QPushButton" name="Contrast">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(200, 200, 200);</string>
+      </property>
+      <property name="text">
+       <string>Contrast</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="3">
+     <widget class="QPushButton" name="Brightness">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(200, 200, 200);</string>
+      </property>
+      <property name="text">
+       <string>Brightness</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="3">
+     <widget class="QPushButton" name="Select_RGB">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(200, 200, 200);</string>
+      </property>
+      <property name="text">
+       <string>Select_RGB</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="4" colspan="2">
+     <widget class="QPushButton" name="HV_Mirror">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(200, 200, 200);</string>
+      </property>
+      <property name="text">
+       <string>HV_Mirror</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="2" colspan="2">
+     <widget class="QPushButton" name="Delete">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(200, 200, 200);</string>
+      </property>
+      <property name="text">
+       <string>Delete Filters</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="3">
+     <widget class="QPushButton" name="Vertical_Mirror">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(200, 200, 200);</string>
+      </property>
+      <property name="text">
+       <string>Vertical_Mirror</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="3" colspan="3">
+     <widget class="QLabel" name="Preview_img">
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="margin">
+       <number>0</number>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="0">
+     <widget class="QPushButton" name="Negative">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(200, 200, 200);</string>
+      </property>
+      <property name="text">
+       <string>Negative</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QPushButton" name="High_pass">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(200, 200, 200);</string>
+      </property>
+      <property name="text">
+       <string>High_pass</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0">
+     <widget class="QPushButton" name="Rotate">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(200, 200, 200);</string>
+      </property>
+      <property name="text">
+       <string>Rotate</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="3">
+     <widget class="QPushButton" name="Save">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(200, 200, 200);</string>
+      </property>
+      <property name="text">
+       <string>Save Image</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="4" colspan="2">
+     <widget class="QPushButton" name="SaturationRGB">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(200, 200, 200);</string>
+      </property>
+      <property name="text">
+       <string>Saturation_RGB</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="QPushButton" name="Original_Image">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(200, 200, 200);</string>
+      </property>
+      <property name="text">
+       <string>Original size input image</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="3">
+     <widget class="QPushButton" name="Box_Blur">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(200, 200, 200);</string>
+      </property>
+      <property name="text">
+       <string>Box_Blur</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="4" colspan="2">
+     <widget class="QPushButton" name="Sepia">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(200, 200, 200);</string>
+      </property>
+      <property name="text">
+       <string>Sepia</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="0">
+     <widget class="QPushButton" name="Low_pass_smoothing">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(200, 200, 200);</string>
+      </property>
+      <property name="text">
+       <string>Low_pass_Smoothing</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="1" colspan="2">
+     <widget class="QPushButton" name="Low_pass_Median">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(200, 200, 200);</string>
+      </property>
+      <property name="text">
+       <string>Low_pass_Median</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0" colspan="3">
+     <widget class="QLabel" name="Original_img">
+      <property name="styleSheet">
+       <string notr="true">border-color: rgb(193, 193, 193);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="1" colspan="2">
+     <widget class="QPushButton" name="HSV_Brightness">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(200, 200, 200);</string>
+      </property>
+      <property name="text">
+       <string>HSV_Brightness</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0" colspan="3">
+     <widget class="QLabel" name="Original_img_label">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="3" colspan="3">
+     <widget class="QLabel" name="Filtered_img_label">
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+   </layout>
+   <zorder>Original_img_label</zorder>
+   <zorder>Rotate</zorder>
+   <zorder>Grayscale</zorder>
+   <zorder>Original_Image</zorder>
+   <zorder>Low_pass_smoothing</zorder>
+   <zorder>Original_img</zorder>
+   <zorder>Negative</zorder>
+   <zorder>Gaussian_Blur</zorder>
+   <zorder>Last_filter</zorder>
+   <zorder>HSV_Saturation</zorder>
+   <zorder>SaturationRGB</zorder>
+   <zorder>Load</zorder>
+   <zorder>High_pass</zorder>
+   <zorder>Box_Blur</zorder>
+   <zorder>Close</zorder>
+   <zorder>Delete</zorder>
+   <zorder>Horizontal_Mirror</zorder>
+   <zorder>Vertical_Mirror</zorder>
+   <zorder>HV_Mirror</zorder>
+   <zorder>Filtered_img_label</zorder>
+   <zorder>Sepia</zorder>
+   <zorder>Select_RGB</zorder>
+   <zorder>HSV_Brightness</zorder>
+   <zorder>Save</zorder>
+   <zorder>Low_pass_Median</zorder>
+   <zorder>Contrast</zorder>
+   <zorder>Threshold</zorder>
+   <zorder>Brightness</zorder>
+   <zorder>Histogram</zorder>
+   <zorder>Preview_img</zorder>
+   <zorder>Filtered_Image</zorder>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
