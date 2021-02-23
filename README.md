@@ -26,6 +26,7 @@ The Bitmap class is the foundation of this program it has basically only two fun
 | Read | `const char* filename`  | `bmp.read("your_BMP_img.bmp")`
 | Write | `const char* filename, vector<uint8_t> data` | `bmp.write("filtered_BMP.bmp")` |
 | Constructor | `const char* filename` | `Bitmap bmp("your_BMP_img.bmp")` |
+
 After reading the bmp your Bitmap object will have all of the bmp header infos.(height, width, size, etc.).
 
 All filter classes are to be declared with a capital first letter, like so: Grayscale, Brightness, Low_pass, High_pass...
