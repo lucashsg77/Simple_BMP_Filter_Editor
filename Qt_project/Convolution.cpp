@@ -17,15 +17,15 @@ vector<uint8_t> Convolution::convolution(vector<uint8_t> pixel_data, vector<uint
             for (int j = left_limit; j <= right_limit; ++j) {
                 for (int i = left_limit; i <= right_limit; ++i) {
 
-                        int y = (row + j), xk = j + -(left_limit) * row_kernel;
-                        int n = 0, x = (col + i), yk = i + -(left_limit);
+                        int y = (row + j);
+                        int n = 0, x = (col + i);
 
-                        convolution_b += pixel_data[get_pos(width, height, y, x, n)] * kernel_1d[xk + yk];
+                        convolution_b += pixel_data[get_pos(width, height, y, x, n)] * kernel_1d[((j + -(left_limit)) * (row_kernel)) + (i + -(left_limit))];
                         n++;
-                        convolution_g += pixel_data[get_pos(width, height, y, x, n)] * kernel_1d[xk + yk];
+                        convolution_g += pixel_data[get_pos(width, height, y, x, n)] * kernel_1d[((j + -(left_limit)) * (row_kernel)) + (i + -(left_limit))];
                         n++;
-                        convolution_r += pixel_data[get_pos(width, height, y, x, n)] * kernel_1d[xk + yk];
-                        sum_Kernel += kernel_1d[xk + yk];
+                        convolution_r += pixel_data[get_pos(width, height, y, x, n)] * kernel_1d[((j + -(left_limit)) * (row_kernel)) + (i + -(left_limit))];
+                        sum_Kernel += kernel_1d[((j + -(left_limit)) * (row_kernel)) + (i + -(left_limit))];
                 }
                 modified_image_bits[get_pos(width, height, row, col, 0)] = (uint8_t)check_value(convolution_b / sum_Kernel);
                 modified_image_bits[get_pos(width, height, row, col, 1)] = (uint8_t)check_value(convolution_g / sum_Kernel);
