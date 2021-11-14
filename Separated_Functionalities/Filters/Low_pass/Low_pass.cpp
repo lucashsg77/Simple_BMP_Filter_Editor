@@ -67,5 +67,4 @@ void Low_pass::median(int radius) {
 
 vector<uint8_t> Low_pass::filtered_pixel_data(){
     return modified_image_bits;
-    modified_image_bits.clear();
 }

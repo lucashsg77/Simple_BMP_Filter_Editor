@@ -14,8 +14,8 @@ double Filter::check_value(double value, double left_bound, double right_bound) 
 
 //To calculate the position in the vector as if it was a matrice the original formula would be: pos = y * w + x, but we multiply it by 3 because there are 3 channels(bgr), we also add the n
 //at the end to get to the right position if n = 0 we get the blue value, n = 1 green value, n = 2 red value, given that the BMP files are stored in BGR format.
-//So our formula is pos = (y * w * 3) + (x * 3 + n) for all non-edge pixels, when there are edge pixel cases you can ignore them, assume a value or "duplicate" the closest one the function below
-//"duplicates" the closest one, mening that it gives the position if the edge pixel for every non-existing position.
+//So our formula is pos = (y * w * 3) + (x * 3 + n) for all non-edge pixels, when there are edge pixel cases you can ignore them, assume a value or "duplicate" the closest one, the function below
+//"duplicates" the closest one, meaning that it gives the position if the edge pixel for every non-existing position.
 
 int Filter::get_pos(int w, int h, int y, int x , int n)
 {

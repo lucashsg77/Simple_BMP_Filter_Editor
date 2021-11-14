@@ -35,6 +35,7 @@ vector<uint8_t> Convolution::convolution(vector<uint8_t> pixel_data, vector<uint
     }
     return modified_image_bits;
 }
+
 //Similar to the first function, the difference is the operation that goes on in the median filter that involves sorting as well.
 vector<uint8_t> Convolution::median_convolution(vector<uint8_t> pixel_data, vector<uint8_t> modified_image_bits, int width, int height, int radius) {
     int right_limit = radius;

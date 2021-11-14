@@ -95,5 +95,4 @@ void HSV::rgb_to_hsv(uint8_t red, uint8_t green, uint8_t blue) {
 
 vector<uint8_t> HSV::filtered_pixel_data(){
     return pixel_data;
-    pixel_data = aux;
 }
